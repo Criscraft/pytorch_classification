@@ -1,0 +1,175 @@
+{
+   "log_path": "/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/log/cifar10/seed_2",
+   "info": "RestNet018 is trained on the official CIFAR10 train set and validated on the official CIFAR10 test set.",
+   "seed": 2,
+   "epochs": 100,
+   "num_workers": 2,
+   "pin_memory": false,
+   "no_cuda": false,
+   "cuda_device": "cuda:0",
+   "save_data_paths": true,
+   "path_of_configfile": "/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts/config_train_resnet018_cifar.py",
+   "networks": {
+      "network_main": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptnetworks/ResNetCIFAR.py",
+         "params": {
+            "variant": "resnet018",
+            "n_classes": 10,
+            "pretrained": false
+         }
+      }
+   },
+   "loss_fns": {
+      "loss_fn_main": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptutils/CrossEntropyLoss.py",
+         "params": {}
+      }
+   },
+   "optimizers": {
+      "optimizer_main": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptutils/Lamb2.py",
+         "params": {
+            "lr": 0.008,
+            "betas": [
+               0.9,
+               0.999
+            ],
+            "weight_decay": 1.0
+         }
+      }
+   },
+   "transforms": {
+      "transform_train": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts/TransformCIFARTrainBaseline.py",
+         "params": {
+            "norm_mean": [
+               0.4913725490196078,
+               0.4823529411764706,
+               0.4466666666666667
+            ],
+            "norm_std": [
+               0.24705882352941178,
+               0.24352941176470588,
+               0.2615686274509804
+            ]
+         }
+      },
+      "transform_test": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts/TransformCIFARTest.py",
+         "params": {
+            "norm_mean": [
+               0.4913725490196078,
+               0.4823529411764706,
+               0.4466666666666667
+            ],
+            "norm_std": [
+               0.24705882352941178,
+               0.24352941176470588,
+               0.2615686274509804
+            ]
+         }
+      }
+   },
+   "datasets": {
+      "dataset_train": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts/CIFAR10.py",
+         "params": {
+            "transform": "transform_train",
+            "root": "/data/tmp_data",
+            "download": true,
+            "b_train": true
+         }
+      },
+      "dataset_test": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts/CIFAR10.py",
+         "params": {
+            "transform": "transform_test",
+            "root": "/data/tmp_data",
+            "download": false,
+            "b_train": false
+         }
+      }
+   },
+   "loaders": {
+      "loader_train": {
+         "source": "/nfshome/linse/Documents/development/pytorchtools/ptutils/DataloaderGetter.py",
+         "params": {
+            "dataset": "dataset_train",
+            "batch_size": 512,
+            "b_shuffled": true
+         }
+      },
+      "loader_test": {
+         "source": "/nfshome/linse/Documents/development/pytorchtools/ptutils/DataloaderGetter.py",
+         "params": {
+            "dataset": "dataset_test",
+            "batch_size": 1024,
+            "b_shuffled": false
+         }
+      }
+   },
+   "scheduler_modules": {
+      "training_initializer": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptschedulers/SchedulerTrainingInitializationModule.py",
+         "params": {}
+      },
+      "scheduler_trainer": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptschedulers/SchedulerTrainingModule.py",
+         "params": {}
+      },
+      "scheduler_validator": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptschedulers/SchedulerValidationModule.py",
+         "params": {
+            "active_epochs": [
+               5,
+               10,
+               15,
+               20,
+               25,
+               30,
+               35,
+               40,
+               45,
+               50,
+               55,
+               60,
+               65,
+               70,
+               75,
+               80,
+               85,
+               90,
+               95
+            ]
+         }
+      },
+      "scheduler_model_saver": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptschedulers/SchedulerSaveNetModule.py",
+         "params": {}
+      },
+      "scheduler_lr": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptschedulers/SchedulerLearningRateModifierModule.py",
+         "params": {
+            "schedule": {
+               "60": 0.0024,
+               "80": 0.0008,
+               "84": 0.00024,
+               "88": 8e-05,
+               "92": 2.4e-05,
+               "96": 8e-06
+            }
+         }
+      },
+      "scheduler_save_output_final_test": {
+         "source": "/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptschedulers/SchedulerLogOutputModule.py",
+         "params": {
+            "loader": "loader_test",
+            "keys_to_log_from_original_data_anyways": [
+               "label",
+               "id"
+            ],
+            "filename": "outputs_test.pkl"
+         }
+      }
+   }
+}

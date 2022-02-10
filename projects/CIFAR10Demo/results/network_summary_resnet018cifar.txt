@@ -1,0 +1,197 @@
+=============================================================================================================
+                                                         Kernel Shape  \
+Layer                                                                   
+0_embedded_model.Conv2d_conv1                           [3, 64, 3, 3]   
+1_embedded_model.BatchNorm2d_bn1                                 [64]   
+2_embedded_model.ReLU_relu                                          -   
+3_embedded_model.Identity_maxpool                                   -   
+4_embedded_model.layer1.0.Conv2d_conv1                 [64, 64, 3, 3]   
+5_embedded_model.layer1.0.BatchNorm2d_bn1                        [64]   
+6_embedded_model.layer1.0.ReLU_relu_1                               -   
+7_embedded_model.layer1.0.Conv2d_conv2                 [64, 64, 3, 3]   
+8_embedded_model.layer1.0.BatchNorm2d_bn2                        [64]   
+9_embedded_model.layer1.0.ReLU_relu_2                               -   
+10_embedded_model.layer1.1.Conv2d_conv1                [64, 64, 3, 3]   
+11_embedded_model.layer1.1.BatchNorm2d_bn1                       [64]   
+12_embedded_model.layer1.1.ReLU_relu_1                              -   
+13_embedded_model.layer1.1.Conv2d_conv2                [64, 64, 3, 3]   
+14_embedded_model.layer1.1.BatchNorm2d_bn2                       [64]   
+15_embedded_model.layer1.1.ReLU_relu_2                              -   
+16_embedded_model.layer2.0.Conv2d_conv1               [64, 128, 3, 3]   
+17_embedded_model.layer2.0.BatchNorm2d_bn1                      [128]   
+18_embedded_model.layer2.0.ReLU_relu_1                              -   
+19_embedded_model.layer2.0.Conv2d_conv2              [128, 128, 3, 3]   
+20_embedded_model.layer2.0.BatchNorm2d_bn2                      [128]   
+21_embedded_model.layer2.0.downsample.Conv2d_0        [64, 128, 1, 1]   
+22_embedded_model.layer2.0.downsample.BatchNorm2d_1             [128]   
+23_embedded_model.layer2.0.ReLU_relu_2                              -   
+24_embedded_model.layer2.1.Conv2d_conv1              [128, 128, 3, 3]   
+25_embedded_model.layer2.1.BatchNorm2d_bn1                      [128]   
+26_embedded_model.layer2.1.ReLU_relu_1                              -   
+27_embedded_model.layer2.1.Conv2d_conv2              [128, 128, 3, 3]   
+28_embedded_model.layer2.1.BatchNorm2d_bn2                      [128]   
+29_embedded_model.layer2.1.ReLU_relu_2                              -   
+30_embedded_model.layer3.0.Conv2d_conv1              [128, 256, 3, 3]   
+31_embedded_model.layer3.0.BatchNorm2d_bn1                      [256]   
+32_embedded_model.layer3.0.ReLU_relu_1                              -   
+33_embedded_model.layer3.0.Conv2d_conv2              [256, 256, 3, 3]   
+34_embedded_model.layer3.0.BatchNorm2d_bn2                      [256]   
+35_embedded_model.layer3.0.downsample.Conv2d_0       [128, 256, 1, 1]   
+36_embedded_model.layer3.0.downsample.BatchNorm2d_1             [256]   
+37_embedded_model.layer3.0.ReLU_relu_2                              -   
+38_embedded_model.layer3.1.Conv2d_conv1              [256, 256, 3, 3]   
+39_embedded_model.layer3.1.BatchNorm2d_bn1                      [256]   
+40_embedded_model.layer3.1.ReLU_relu_1                              -   
+41_embedded_model.layer3.1.Conv2d_conv2              [256, 256, 3, 3]   
+42_embedded_model.layer3.1.BatchNorm2d_bn2                      [256]   
+43_embedded_model.layer3.1.ReLU_relu_2                              -   
+44_embedded_model.layer4.0.Conv2d_conv1              [256, 512, 3, 3]   
+45_embedded_model.layer4.0.BatchNorm2d_bn1                      [512]   
+46_embedded_model.layer4.0.ReLU_relu_1                              -   
+47_embedded_model.layer4.0.Conv2d_conv2              [512, 512, 3, 3]   
+48_embedded_model.layer4.0.BatchNorm2d_bn2                      [512]   
+49_embedded_model.layer4.0.downsample.Conv2d_0       [256, 512, 1, 1]   
+50_embedded_model.layer4.0.downsample.BatchNorm2d_1             [512]   
+51_embedded_model.layer4.0.ReLU_relu_2                              -   
+52_embedded_model.layer4.1.Conv2d_conv1              [512, 512, 3, 3]   
+53_embedded_model.layer4.1.BatchNorm2d_bn1                      [512]   
+54_embedded_model.layer4.1.ReLU_relu_1                              -   
+55_embedded_model.layer4.1.Conv2d_conv2              [512, 512, 3, 3]   
+56_embedded_model.layer4.1.BatchNorm2d_bn2                      [512]   
+57_embedded_model.layer4.1.ReLU_relu_2                              -   
+58_embedded_model.AdaptiveAvgPool2d_avgpool                         -   
+59_embedded_model.Linear_classifier                         [512, 10]   
+
+                                                        Output Shape  \
+Layer                                                                  
+0_embedded_model.Conv2d_conv1                        [1, 64, 18, 18]   
+1_embedded_model.BatchNorm2d_bn1                     [1, 64, 18, 18]   
+2_embedded_model.ReLU_relu                           [1, 64, 18, 18]   
+3_embedded_model.Identity_maxpool                    [1, 64, 18, 18]   
+4_embedded_model.layer1.0.Conv2d_conv1               [1, 64, 18, 18]   
+5_embedded_model.layer1.0.BatchNorm2d_bn1            [1, 64, 18, 18]   
+6_embedded_model.layer1.0.ReLU_relu_1                [1, 64, 18, 18]   
+7_embedded_model.layer1.0.Conv2d_conv2               [1, 64, 18, 18]   
+8_embedded_model.layer1.0.BatchNorm2d_bn2            [1, 64, 18, 18]   
+9_embedded_model.layer1.0.ReLU_relu_2                [1, 64, 18, 18]   
+10_embedded_model.layer1.1.Conv2d_conv1              [1, 64, 18, 18]   
+11_embedded_model.layer1.1.BatchNorm2d_bn1           [1, 64, 18, 18]   
+12_embedded_model.layer1.1.ReLU_relu_1               [1, 64, 18, 18]   
+13_embedded_model.layer1.1.Conv2d_conv2              [1, 64, 18, 18]   
+14_embedded_model.layer1.1.BatchNorm2d_bn2           [1, 64, 18, 18]   
+15_embedded_model.layer1.1.ReLU_relu_2               [1, 64, 18, 18]   
+16_embedded_model.layer2.0.Conv2d_conv1               [1, 128, 9, 9]   
+17_embedded_model.layer2.0.BatchNorm2d_bn1            [1, 128, 9, 9]   
+18_embedded_model.layer2.0.ReLU_relu_1                [1, 128, 9, 9]   
+19_embedded_model.layer2.0.Conv2d_conv2               [1, 128, 9, 9]   
+20_embedded_model.layer2.0.BatchNorm2d_bn2            [1, 128, 9, 9]   
+21_embedded_model.layer2.0.downsample.Conv2d_0        [1, 128, 9, 9]   
+22_embedded_model.layer2.0.downsample.BatchNorm2d_1   [1, 128, 9, 9]   
+23_embedded_model.layer2.0.ReLU_relu_2                [1, 128, 9, 9]   
+24_embedded_model.layer2.1.Conv2d_conv1               [1, 128, 9, 9]   
+25_embedded_model.layer2.1.BatchNorm2d_bn1            [1, 128, 9, 9]   
+26_embedded_model.layer2.1.ReLU_relu_1                [1, 128, 9, 9]   
+27_embedded_model.layer2.1.Conv2d_conv2               [1, 128, 9, 9]   
+28_embedded_model.layer2.1.BatchNorm2d_bn2            [1, 128, 9, 9]   
+29_embedded_model.layer2.1.ReLU_relu_2                [1, 128, 9, 9]   
+30_embedded_model.layer3.0.Conv2d_conv1               [1, 256, 5, 5]   
+31_embedded_model.layer3.0.BatchNorm2d_bn1            [1, 256, 5, 5]   
+32_embedded_model.layer3.0.ReLU_relu_1                [1, 256, 5, 5]   
+33_embedded_model.layer3.0.Conv2d_conv2               [1, 256, 5, 5]   
+34_embedded_model.layer3.0.BatchNorm2d_bn2            [1, 256, 5, 5]   
+35_embedded_model.layer3.0.downsample.Conv2d_0        [1, 256, 5, 5]   
+36_embedded_model.layer3.0.downsample.BatchNorm2d_1   [1, 256, 5, 5]   
+37_embedded_model.layer3.0.ReLU_relu_2                [1, 256, 5, 5]   
+38_embedded_model.layer3.1.Conv2d_conv1               [1, 256, 5, 5]   
+39_embedded_model.layer3.1.BatchNorm2d_bn1            [1, 256, 5, 5]   
+40_embedded_model.layer3.1.ReLU_relu_1                [1, 256, 5, 5]   
+41_embedded_model.layer3.1.Conv2d_conv2               [1, 256, 5, 5]   
+42_embedded_model.layer3.1.BatchNorm2d_bn2            [1, 256, 5, 5]   
+43_embedded_model.layer3.1.ReLU_relu_2                [1, 256, 5, 5]   
+44_embedded_model.layer4.0.Conv2d_conv1               [1, 512, 3, 3]   
+45_embedded_model.layer4.0.BatchNorm2d_bn1            [1, 512, 3, 3]   
+46_embedded_model.layer4.0.ReLU_relu_1                [1, 512, 3, 3]   
+47_embedded_model.layer4.0.Conv2d_conv2               [1, 512, 3, 3]   
+48_embedded_model.layer4.0.BatchNorm2d_bn2            [1, 512, 3, 3]   
+49_embedded_model.layer4.0.downsample.Conv2d_0        [1, 512, 3, 3]   
+50_embedded_model.layer4.0.downsample.BatchNorm2d_1   [1, 512, 3, 3]   
+51_embedded_model.layer4.0.ReLU_relu_2                [1, 512, 3, 3]   
+52_embedded_model.layer4.1.Conv2d_conv1               [1, 512, 3, 3]   
+53_embedded_model.layer4.1.BatchNorm2d_bn1            [1, 512, 3, 3]   
+54_embedded_model.layer4.1.ReLU_relu_1                [1, 512, 3, 3]   
+55_embedded_model.layer4.1.Conv2d_conv2               [1, 512, 3, 3]   
+56_embedded_model.layer4.1.BatchNorm2d_bn2            [1, 512, 3, 3]   
+57_embedded_model.layer4.1.ReLU_relu_2                [1, 512, 3, 3]   
+58_embedded_model.AdaptiveAvgPool2d_avgpool           [1, 512, 1, 1]   
+59_embedded_model.Linear_classifier                          [1, 10]   
+
+                                                        Params   Mult-Adds  
+Layer                                                                       
+0_embedded_model.Conv2d_conv1                           1.728k    559.872k  
+1_embedded_model.BatchNorm2d_bn1                         128.0        64.0  
+2_embedded_model.ReLU_relu                                   -           -  
+3_embedded_model.Identity_maxpool                            -           -  
+4_embedded_model.layer1.0.Conv2d_conv1                 36.864k  11.943936M  
+5_embedded_model.layer1.0.BatchNorm2d_bn1                128.0        64.0  
+6_embedded_model.layer1.0.ReLU_relu_1                        -           -  
+7_embedded_model.layer1.0.Conv2d_conv2                 36.864k  11.943936M  
+8_embedded_model.layer1.0.BatchNorm2d_bn2                128.0        64.0  
+9_embedded_model.layer1.0.ReLU_relu_2                        -           -  
+10_embedded_model.layer1.1.Conv2d_conv1                36.864k  11.943936M  
+11_embedded_model.layer1.1.BatchNorm2d_bn1               128.0        64.0  
+12_embedded_model.layer1.1.ReLU_relu_1                       -           -  
+13_embedded_model.layer1.1.Conv2d_conv2                36.864k  11.943936M  
+14_embedded_model.layer1.1.BatchNorm2d_bn2               128.0        64.0  
+15_embedded_model.layer1.1.ReLU_relu_2                       -           -  
+16_embedded_model.layer2.0.Conv2d_conv1                73.728k   5.971968M  
+17_embedded_model.layer2.0.BatchNorm2d_bn1               256.0       128.0  
+18_embedded_model.layer2.0.ReLU_relu_1                       -           -  
+19_embedded_model.layer2.0.Conv2d_conv2               147.456k  11.943936M  
+20_embedded_model.layer2.0.BatchNorm2d_bn2               256.0       128.0  
+21_embedded_model.layer2.0.downsample.Conv2d_0          8.192k    663.552k  
+22_embedded_model.layer2.0.downsample.BatchNorm2d_1      256.0       128.0  
+23_embedded_model.layer2.0.ReLU_relu_2                       -           -  
+24_embedded_model.layer2.1.Conv2d_conv1               147.456k  11.943936M  
+25_embedded_model.layer2.1.BatchNorm2d_bn1               256.0       128.0  
+26_embedded_model.layer2.1.ReLU_relu_1                       -           -  
+27_embedded_model.layer2.1.Conv2d_conv2               147.456k  11.943936M  
+28_embedded_model.layer2.1.BatchNorm2d_bn2               256.0       128.0  
+29_embedded_model.layer2.1.ReLU_relu_2                       -           -  
+30_embedded_model.layer3.0.Conv2d_conv1               294.912k     7.3728M  
+31_embedded_model.layer3.0.BatchNorm2d_bn1               512.0       256.0  
+32_embedded_model.layer3.0.ReLU_relu_1                       -           -  
+33_embedded_model.layer3.0.Conv2d_conv2               589.824k    14.7456M  
+34_embedded_model.layer3.0.BatchNorm2d_bn2               512.0       256.0  
+35_embedded_model.layer3.0.downsample.Conv2d_0         32.768k      819.2k  
+36_embedded_model.layer3.0.downsample.BatchNorm2d_1      512.0       256.0  
+37_embedded_model.layer3.0.ReLU_relu_2                       -           -  
+38_embedded_model.layer3.1.Conv2d_conv1               589.824k    14.7456M  
+39_embedded_model.layer3.1.BatchNorm2d_bn1               512.0       256.0  
+40_embedded_model.layer3.1.ReLU_relu_1                       -           -  
+41_embedded_model.layer3.1.Conv2d_conv2               589.824k    14.7456M  
+42_embedded_model.layer3.1.BatchNorm2d_bn2               512.0       256.0  
+43_embedded_model.layer3.1.ReLU_relu_2                       -           -  
+44_embedded_model.layer4.0.Conv2d_conv1              1.179648M  10.616832M  
+45_embedded_model.layer4.0.BatchNorm2d_bn1              1.024k       512.0  
+46_embedded_model.layer4.0.ReLU_relu_1                       -           -  
+47_embedded_model.layer4.0.Conv2d_conv2              2.359296M  21.233664M  
+48_embedded_model.layer4.0.BatchNorm2d_bn2              1.024k       512.0  
+49_embedded_model.layer4.0.downsample.Conv2d_0        131.072k   1.179648M  
+50_embedded_model.layer4.0.downsample.BatchNorm2d_1     1.024k       512.0  
+51_embedded_model.layer4.0.ReLU_relu_2                       -           -  
+52_embedded_model.layer4.1.Conv2d_conv1              2.359296M  21.233664M  
+53_embedded_model.layer4.1.BatchNorm2d_bn1              1.024k       512.0  
+54_embedded_model.layer4.1.ReLU_relu_1                       -           -  
+55_embedded_model.layer4.1.Conv2d_conv2              2.359296M  21.233664M  
+56_embedded_model.layer4.1.BatchNorm2d_bn2              1.024k       512.0  
+57_embedded_model.layer4.1.ReLU_relu_2                       -           -  
+58_embedded_model.AdaptiveAvgPool2d_avgpool                  -           -  
+59_embedded_model.Linear_classifier                      5.13k       5.12k  
+-------------------------------------------------------------------------------------------------------------
+                           Totals
+Total params           11.173962M
+Trainable params       11.173962M
+Non-trainable params          0.0
+Mult-Adds             218.739136M
+=============================================================================================================
+None

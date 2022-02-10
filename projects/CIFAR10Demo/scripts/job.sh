@@ -1,0 +1,1 @@
+python run_experiments_seeds_0_4.py config_train_resnet018_cifar.py --gpu=0

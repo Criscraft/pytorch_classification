@@ -1,0 +1,2157 @@
+{
+    "parameters": {
+        "lr": [
+            0.1,
+            0.15,
+            0.2
+        ],
+        "module_list": [
+            "embedded_model.layer1",
+            "embedded_model.layer2",
+            "embedded_model.layer3",
+            "embedded_model.layer4",
+            "embedded_model.classifier"
+        ],
+        "module_to_channel_dict": {
+            "embedded_model.layer1": [
+                12,
+                1,
+                3,
+                27
+            ],
+            "embedded_model.layer2": [
+                6,
+                21,
+                14,
+                55
+            ],
+            "embedded_model.layer3": [
+                53,
+                51,
+                40,
+                7
+            ],
+            "embedded_model.layer4": [
+                30,
+                12,
+                49,
+                15
+            ],
+            "embedded_model.classifier": [
+                12,
+                35,
+                4,
+                28
+            ]
+        },
+        "epochs": [
+            0,
+            50,
+            100,
+            150,
+            199
+        ]
+    },
+    "visualizations": [
+        {
+            "path": "../results/feature_visualizations/12_0_0.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/1_0_1.jpg",
+            "channel": 1,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/3_0_2.jpg",
+            "channel": 3,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/27_0_3.jpg",
+            "channel": 27,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_4.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/1_50_5.jpg",
+            "channel": 1,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/3_50_6.jpg",
+            "channel": 3,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/27_50_7.jpg",
+            "channel": 27,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_8.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/1_100_9.jpg",
+            "channel": 1,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/3_100_10.jpg",
+            "channel": 3,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/27_100_11.jpg",
+            "channel": 27,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_12.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/1_150_13.jpg",
+            "channel": 1,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/3_150_14.jpg",
+            "channel": 3,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/27_150_15.jpg",
+            "channel": 27,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_16.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/1_199_17.jpg",
+            "channel": 1,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/3_199_18.jpg",
+            "channel": 3,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/27_199_19.jpg",
+            "channel": 27,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_20.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/1_0_21.jpg",
+            "channel": 1,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/3_0_22.jpg",
+            "channel": 3,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/27_0_23.jpg",
+            "channel": 27,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_24.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/1_50_25.jpg",
+            "channel": 1,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/3_50_26.jpg",
+            "channel": 3,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/27_50_27.jpg",
+            "channel": 27,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_28.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/1_100_29.jpg",
+            "channel": 1,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/3_100_30.jpg",
+            "channel": 3,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/27_100_31.jpg",
+            "channel": 27,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_32.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/1_150_33.jpg",
+            "channel": 1,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/3_150_34.jpg",
+            "channel": 3,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/27_150_35.jpg",
+            "channel": 27,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_36.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/1_199_37.jpg",
+            "channel": 1,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/3_199_38.jpg",
+            "channel": 3,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/27_199_39.jpg",
+            "channel": 27,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_40.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/1_0_41.jpg",
+            "channel": 1,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/3_0_42.jpg",
+            "channel": 3,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/27_0_43.jpg",
+            "channel": 27,
+            "epoch": 0,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_44.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/1_50_45.jpg",
+            "channel": 1,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/3_50_46.jpg",
+            "channel": 3,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/27_50_47.jpg",
+            "channel": 27,
+            "epoch": 50,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_48.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/1_100_49.jpg",
+            "channel": 1,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/3_100_50.jpg",
+            "channel": 3,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/27_100_51.jpg",
+            "channel": 27,
+            "epoch": 100,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_52.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/1_150_53.jpg",
+            "channel": 1,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/3_150_54.jpg",
+            "channel": 3,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/27_150_55.jpg",
+            "channel": 27,
+            "epoch": 150,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_56.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/1_199_57.jpg",
+            "channel": 1,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/3_199_58.jpg",
+            "channel": 3,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/27_199_59.jpg",
+            "channel": 27,
+            "epoch": 199,
+            "module_name": "embedded_model.layer1",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/6_0_60.jpg",
+            "channel": 6,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/21_0_61.jpg",
+            "channel": 21,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/14_0_62.jpg",
+            "channel": 14,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/55_0_63.jpg",
+            "channel": 55,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/6_50_64.jpg",
+            "channel": 6,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/21_50_65.jpg",
+            "channel": 21,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/14_50_66.jpg",
+            "channel": 14,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/55_50_67.jpg",
+            "channel": 55,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/6_100_68.jpg",
+            "channel": 6,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/21_100_69.jpg",
+            "channel": 21,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/14_100_70.jpg",
+            "channel": 14,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/55_100_71.jpg",
+            "channel": 55,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/6_150_72.jpg",
+            "channel": 6,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/21_150_73.jpg",
+            "channel": 21,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/14_150_74.jpg",
+            "channel": 14,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/55_150_75.jpg",
+            "channel": 55,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/6_199_76.jpg",
+            "channel": 6,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/21_199_77.jpg",
+            "channel": 21,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/14_199_78.jpg",
+            "channel": 14,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/55_199_79.jpg",
+            "channel": 55,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/6_0_80.jpg",
+            "channel": 6,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/21_0_81.jpg",
+            "channel": 21,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/14_0_82.jpg",
+            "channel": 14,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/55_0_83.jpg",
+            "channel": 55,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/6_50_84.jpg",
+            "channel": 6,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/21_50_85.jpg",
+            "channel": 21,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/14_50_86.jpg",
+            "channel": 14,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/55_50_87.jpg",
+            "channel": 55,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/6_100_88.jpg",
+            "channel": 6,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/21_100_89.jpg",
+            "channel": 21,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/14_100_90.jpg",
+            "channel": 14,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/55_100_91.jpg",
+            "channel": 55,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/6_150_92.jpg",
+            "channel": 6,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/21_150_93.jpg",
+            "channel": 21,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/14_150_94.jpg",
+            "channel": 14,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/55_150_95.jpg",
+            "channel": 55,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/6_199_96.jpg",
+            "channel": 6,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/21_199_97.jpg",
+            "channel": 21,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/14_199_98.jpg",
+            "channel": 14,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/55_199_99.jpg",
+            "channel": 55,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/6_0_100.jpg",
+            "channel": 6,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/21_0_101.jpg",
+            "channel": 21,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/14_0_102.jpg",
+            "channel": 14,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/55_0_103.jpg",
+            "channel": 55,
+            "epoch": 0,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/6_50_104.jpg",
+            "channel": 6,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/21_50_105.jpg",
+            "channel": 21,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/14_50_106.jpg",
+            "channel": 14,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/55_50_107.jpg",
+            "channel": 55,
+            "epoch": 50,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/6_100_108.jpg",
+            "channel": 6,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/21_100_109.jpg",
+            "channel": 21,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/14_100_110.jpg",
+            "channel": 14,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/55_100_111.jpg",
+            "channel": 55,
+            "epoch": 100,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/6_150_112.jpg",
+            "channel": 6,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/21_150_113.jpg",
+            "channel": 21,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/14_150_114.jpg",
+            "channel": 14,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/55_150_115.jpg",
+            "channel": 55,
+            "epoch": 150,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/6_199_116.jpg",
+            "channel": 6,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/21_199_117.jpg",
+            "channel": 21,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/14_199_118.jpg",
+            "channel": 14,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/55_199_119.jpg",
+            "channel": 55,
+            "epoch": 199,
+            "module_name": "embedded_model.layer2",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/53_0_120.jpg",
+            "channel": 53,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/51_0_121.jpg",
+            "channel": 51,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/40_0_122.jpg",
+            "channel": 40,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/7_0_123.jpg",
+            "channel": 7,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/53_50_124.jpg",
+            "channel": 53,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/51_50_125.jpg",
+            "channel": 51,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/40_50_126.jpg",
+            "channel": 40,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/7_50_127.jpg",
+            "channel": 7,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/53_100_128.jpg",
+            "channel": 53,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/51_100_129.jpg",
+            "channel": 51,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/40_100_130.jpg",
+            "channel": 40,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/7_100_131.jpg",
+            "channel": 7,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/53_150_132.jpg",
+            "channel": 53,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/51_150_133.jpg",
+            "channel": 51,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/40_150_134.jpg",
+            "channel": 40,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/7_150_135.jpg",
+            "channel": 7,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/53_199_136.jpg",
+            "channel": 53,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/51_199_137.jpg",
+            "channel": 51,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/40_199_138.jpg",
+            "channel": 40,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/7_199_139.jpg",
+            "channel": 7,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/53_0_140.jpg",
+            "channel": 53,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/51_0_141.jpg",
+            "channel": 51,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/40_0_142.jpg",
+            "channel": 40,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/7_0_143.jpg",
+            "channel": 7,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/53_50_144.jpg",
+            "channel": 53,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/51_50_145.jpg",
+            "channel": 51,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/40_50_146.jpg",
+            "channel": 40,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/7_50_147.jpg",
+            "channel": 7,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/53_100_148.jpg",
+            "channel": 53,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/51_100_149.jpg",
+            "channel": 51,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/40_100_150.jpg",
+            "channel": 40,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/7_100_151.jpg",
+            "channel": 7,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/53_150_152.jpg",
+            "channel": 53,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/51_150_153.jpg",
+            "channel": 51,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/40_150_154.jpg",
+            "channel": 40,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/7_150_155.jpg",
+            "channel": 7,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/53_199_156.jpg",
+            "channel": 53,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/51_199_157.jpg",
+            "channel": 51,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/40_199_158.jpg",
+            "channel": 40,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/7_199_159.jpg",
+            "channel": 7,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/53_0_160.jpg",
+            "channel": 53,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/51_0_161.jpg",
+            "channel": 51,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/40_0_162.jpg",
+            "channel": 40,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/7_0_163.jpg",
+            "channel": 7,
+            "epoch": 0,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/53_50_164.jpg",
+            "channel": 53,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/51_50_165.jpg",
+            "channel": 51,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/40_50_166.jpg",
+            "channel": 40,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/7_50_167.jpg",
+            "channel": 7,
+            "epoch": 50,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/53_100_168.jpg",
+            "channel": 53,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/51_100_169.jpg",
+            "channel": 51,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/40_100_170.jpg",
+            "channel": 40,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/7_100_171.jpg",
+            "channel": 7,
+            "epoch": 100,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/53_150_172.jpg",
+            "channel": 53,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/51_150_173.jpg",
+            "channel": 51,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/40_150_174.jpg",
+            "channel": 40,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/7_150_175.jpg",
+            "channel": 7,
+            "epoch": 150,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/53_199_176.jpg",
+            "channel": 53,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/51_199_177.jpg",
+            "channel": 51,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/40_199_178.jpg",
+            "channel": 40,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/7_199_179.jpg",
+            "channel": 7,
+            "epoch": 199,
+            "module_name": "embedded_model.layer3",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/30_0_180.jpg",
+            "channel": 30,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_181.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/49_0_182.jpg",
+            "channel": 49,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/15_0_183.jpg",
+            "channel": 15,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/30_50_184.jpg",
+            "channel": 30,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_185.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/49_50_186.jpg",
+            "channel": 49,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/15_50_187.jpg",
+            "channel": 15,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/30_100_188.jpg",
+            "channel": 30,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_189.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/49_100_190.jpg",
+            "channel": 49,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/15_100_191.jpg",
+            "channel": 15,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/30_150_192.jpg",
+            "channel": 30,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_193.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/49_150_194.jpg",
+            "channel": 49,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/15_150_195.jpg",
+            "channel": 15,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/30_199_196.jpg",
+            "channel": 30,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_197.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/49_199_198.jpg",
+            "channel": 49,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/15_199_199.jpg",
+            "channel": 15,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/30_0_200.jpg",
+            "channel": 30,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_201.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/49_0_202.jpg",
+            "channel": 49,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/15_0_203.jpg",
+            "channel": 15,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/30_50_204.jpg",
+            "channel": 30,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_205.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/49_50_206.jpg",
+            "channel": 49,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/15_50_207.jpg",
+            "channel": 15,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/30_100_208.jpg",
+            "channel": 30,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_209.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/49_100_210.jpg",
+            "channel": 49,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/15_100_211.jpg",
+            "channel": 15,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/30_150_212.jpg",
+            "channel": 30,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_213.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/49_150_214.jpg",
+            "channel": 49,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/15_150_215.jpg",
+            "channel": 15,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/30_199_216.jpg",
+            "channel": 30,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_217.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/49_199_218.jpg",
+            "channel": 49,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/15_199_219.jpg",
+            "channel": 15,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/30_0_220.jpg",
+            "channel": 30,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_221.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/49_0_222.jpg",
+            "channel": 49,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/15_0_223.jpg",
+            "channel": 15,
+            "epoch": 0,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/30_50_224.jpg",
+            "channel": 30,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_225.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/49_50_226.jpg",
+            "channel": 49,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/15_50_227.jpg",
+            "channel": 15,
+            "epoch": 50,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/30_100_228.jpg",
+            "channel": 30,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_229.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/49_100_230.jpg",
+            "channel": 49,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/15_100_231.jpg",
+            "channel": 15,
+            "epoch": 100,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/30_150_232.jpg",
+            "channel": 30,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_233.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/49_150_234.jpg",
+            "channel": 49,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/15_150_235.jpg",
+            "channel": 15,
+            "epoch": 150,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/30_199_236.jpg",
+            "channel": 30,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_237.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/49_199_238.jpg",
+            "channel": 49,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/15_199_239.jpg",
+            "channel": 15,
+            "epoch": 199,
+            "module_name": "embedded_model.layer4",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_240.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/35_0_241.jpg",
+            "channel": 35,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/4_0_242.jpg",
+            "channel": 4,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/28_0_243.jpg",
+            "channel": 28,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_244.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/35_50_245.jpg",
+            "channel": 35,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/4_50_246.jpg",
+            "channel": 4,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/28_50_247.jpg",
+            "channel": 28,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_248.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/35_100_249.jpg",
+            "channel": 35,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/4_100_250.jpg",
+            "channel": 4,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/28_100_251.jpg",
+            "channel": 28,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_252.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/35_150_253.jpg",
+            "channel": 35,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/4_150_254.jpg",
+            "channel": 4,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/28_150_255.jpg",
+            "channel": 28,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_256.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/35_199_257.jpg",
+            "channel": 35,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/4_199_258.jpg",
+            "channel": 4,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/28_199_259.jpg",
+            "channel": 28,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.1
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_260.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/35_0_261.jpg",
+            "channel": 35,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/4_0_262.jpg",
+            "channel": 4,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/28_0_263.jpg",
+            "channel": 28,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_264.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/35_50_265.jpg",
+            "channel": 35,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/4_50_266.jpg",
+            "channel": 4,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/28_50_267.jpg",
+            "channel": 28,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_268.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/35_100_269.jpg",
+            "channel": 35,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/4_100_270.jpg",
+            "channel": 4,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/28_100_271.jpg",
+            "channel": 28,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_272.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/35_150_273.jpg",
+            "channel": 35,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/4_150_274.jpg",
+            "channel": 4,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/28_150_275.jpg",
+            "channel": 28,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_276.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/35_199_277.jpg",
+            "channel": 35,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/4_199_278.jpg",
+            "channel": 4,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/28_199_279.jpg",
+            "channel": 28,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.15
+        },
+        {
+            "path": "../results/feature_visualizations/12_0_280.jpg",
+            "channel": 12,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/35_0_281.jpg",
+            "channel": 35,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/4_0_282.jpg",
+            "channel": 4,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/28_0_283.jpg",
+            "channel": 28,
+            "epoch": 0,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_50_284.jpg",
+            "channel": 12,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/35_50_285.jpg",
+            "channel": 35,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/4_50_286.jpg",
+            "channel": 4,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/28_50_287.jpg",
+            "channel": 28,
+            "epoch": 50,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_100_288.jpg",
+            "channel": 12,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/35_100_289.jpg",
+            "channel": 35,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/4_100_290.jpg",
+            "channel": 4,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/28_100_291.jpg",
+            "channel": 28,
+            "epoch": 100,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_150_292.jpg",
+            "channel": 12,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/35_150_293.jpg",
+            "channel": 35,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/4_150_294.jpg",
+            "channel": 4,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/28_150_295.jpg",
+            "channel": 28,
+            "epoch": 150,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/12_199_296.jpg",
+            "channel": 12,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/35_199_297.jpg",
+            "channel": 35,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/4_199_298.jpg",
+            "channel": 4,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        },
+        {
+            "path": "../results/feature_visualizations/28_199_299.jpg",
+            "channel": 28,
+            "epoch": 199,
+            "module_name": "embedded_model.classifier",
+            "lr": 0.2
+        }
+    ]
+}
