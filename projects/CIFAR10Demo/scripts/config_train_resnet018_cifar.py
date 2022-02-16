@@ -11,8 +11,7 @@ def get_config(gpu=0, seed=42):
     norm_mean = [x / 255.0 for x in [125.3, 123.0, 113.9]]
     norm_std = [x / 255.0 for x in [63.0, 62.1, 66.7]]
     pytorchtools_path = '/nfshome/linse/Documents/development/pytorch_classification/pytorchtools'
-    script_dir_path = '/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts'
-
+    project_script_path = '/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/scripts'
 
     config = {
         'log_path' : f'/nfshome/linse/Documents/development/pytorch_classification/projects/CIFAR10Demo/log/cifar10',
@@ -63,14 +62,14 @@ def get_config(gpu=0, seed=42):
     config['transforms'] = {}
 
     item = {}; config['transforms']['transform_train'] = item
-    item['source'] = os.path.join(script_dir_path, 'TransformCIFARTrainBaseline.py')
+    item['source'] = os.path.join(project_script_path, 'TransformCIFARTrainBaseline.py')
     item['params'] = {
         'norm_mean' :  norm_mean, 
         'norm_std' : norm_std,
         }
     
     item = {}; config['transforms']['transform_test'] = item
-    item['source'] = os.path.join(script_dir_path, 'TransformCIFARTest.py')
+    item['source'] = os.path.join(project_script_path, 'TransformCIFARTest.py')
     item['params'] = {
         'norm_mean' :  norm_mean, 
         'norm_std' : norm_std,
@@ -81,7 +80,7 @@ def get_config(gpu=0, seed=42):
     config['datasets'] = {}
 
     item = {}; config['datasets']['dataset_train'] = item
-    item['source'] = os.path.join(script_dir_path, 'CIFAR10.py')
+    item['source'] = os.path.join(project_script_path, 'CIFAR10.py')
     item['params'] = {
         'transform' : 'transform_train',
         'root' : '/data/tmp_data',
@@ -90,7 +89,7 @@ def get_config(gpu=0, seed=42):
     }
 
     item = {}; config['datasets']['dataset_test'] = item
-    item['source'] = os.path.join(script_dir_path, 'CIFAR10.py')
+    item['source'] = os.path.join(project_script_path, 'CIFAR10.py')
     item['params'] = {
         'transform' : 'transform_test',
         'root' : '/data/tmp_data',

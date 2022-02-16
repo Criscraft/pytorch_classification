@@ -211,10 +211,15 @@ def plot_image_batch(dataloader, batch_index=0, filename='', norm_mean=[], norm_
     ncol = 4
     nrow = np.ceil(batch['data'].shape[0] / float(ncol)).astype(int)
     fig, _ = plt.subplots(nrow, ncol, figsize=(ncol*2.5,nrow*2.5))
+    try:
+        class_names = dataloader.dataset.class_names
+    except: 
+        class_names = None
     for i, (image_tensor, label) in enumerate(zip(batch['data'], batch['label'])):
         ax = plt.subplot(nrow, ncol, i+1)
         ax.imshow(tensor_to_pil(image_tensor, norm_mean, norm_std))
-        ax.set_title(str(label))
+        labelstring = class_names[label] if class_names else str(label)
+        ax.set_title(labelstring)
         plt.axis('off')
     fig.tight_layout()
     
