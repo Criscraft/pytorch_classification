@@ -17,6 +17,18 @@ class CIFAR10(data.Dataset):
         self.root = root
         self.download = download
         self.tags = tags
+        self.class_names = [
+            "airplane",
+            "automobile",
+            "bird",
+            "cat",
+            "deer",
+            "dog",
+            "frog",
+            "horse",
+            "ship",
+            "truck",
+        ]
 
 
     def prepare(self, shared_modules):

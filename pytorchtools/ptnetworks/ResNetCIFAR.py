@@ -302,7 +302,7 @@ class ResNet(nn.Module):
         self.groups = groups
         self.base_width = width_per_group
         #for CIFAR we choose a kernel size of 3 in the first convolutional layer
-        self.conv1 = nn.Conv2d(3, self.inplanes, kernel_size=3, stride=2, padding=3,
+        self.conv1 = nn.Conv2d(3, self.inplanes, kernel_size=3, stride=1, padding=1,
                                bias=False)
         self.conv1.ID = self.ID + '_first_layer'
         self.bn1 = norm_layer(self.inplanes)

@@ -15,7 +15,9 @@ class SchedulerTrainingModule(SchedulerBaseModule):
         min_virtual_batch_size=1,
         b_use_weights=False,
         id_target_layer='first_layer',
-        filename='trainstatistics.dat'):
+        filename='trainstatistics.dat',
+        clamp_weights_range=[], # list with min and max value
+        ):
         super().__init__()
 
         self.interval = interval
@@ -27,6 +29,7 @@ class SchedulerTrainingModule(SchedulerBaseModule):
         self.b_use_weights = b_use_weights
         self.id_target_layer = id_target_layer
         self.filename = filename
+        self.clamp_weights_range = clamp_weights_range
 
         self.log_keys = []
 
@@ -63,24 +66,30 @@ class SchedulerTrainingModule(SchedulerBaseModule):
                     optimizer.step()
 
                     #record the gradient of the target layer if possible
-                    record_gradient = False
-                    for m in network.modules():
-                        if hasattr(m, 'ID') and self.id_target_layer in m.ID and m.weight.grad is not None:
-                            gradient_of_target_layer = m.weight.grad.clone().detach()
-                            record_gradient = True
-                            break
-                    if record_gradient:
-                        parameter_size = torch.tensor([gradient_of_target_layer.numel()], dtype=torch.float, device=device, requires_grad=False) 
-                        gradient_of_target_layer = gradient_of_target_layer.flatten()
-                        gradient_of_target_layer_magnitude = gradient_of_target_layer.norm()
-                        loss_outputs['grad_target_layer'] = gradient_of_target_layer_magnitude * batch_size / torch.sqrt(parameter_size)
-                        if mean_gradient is None:
-                            mean_gradient = torch.ones_like(gradient_of_target_layer, device=device)
-                            mean_gradient = mean_gradient / (mean_gradient.norm() + 1e-6)
-                        scalar_product = ((gradient_of_target_layer*mean_gradient).sum())/((gradient_of_target_layer.norm()+1e-6)*mean_gradient.norm())
-                        alpha = torch.acos(scalar_product) / (2*3.141)*360
-                        mean_gradient = exp_moving_average(mean_gradient, gradient_of_target_layer/(gradient_of_target_layer_magnitude+1e-6))
-                        loss_outputs['grad_target_layer_alpha'] = alpha * batch_size
+                    # record_gradient = False
+                    # for m in network.modules():
+                    #     if hasattr(m, 'ID') and self.id_target_layer in m.ID and m.weight.grad is not None:
+                    #         gradient_of_target_layer = m.weight.grad.clone().detach()
+                    #         record_gradient = True
+                    #         break
+
+                    if hasattr(network, "regularize"):
+                        network.regularize()
+                    if hasattr(network, "update_internals"):
+                        network.update_internals()
+
+                    # if record_gradient:
+                    #     parameter_size = torch.tensor([gradient_of_target_layer.numel()], dtype=torch.float, device=device, requires_grad=False) 
+                    #     gradient_of_target_layer = gradient_of_target_layer.flatten()
+                    #     gradient_of_target_layer_magnitude = gradient_of_target_layer.norm()
+                    #     loss_outputs['grad_target_layer'] = gradient_of_target_layer_magnitude * batch_size / torch.sqrt(parameter_size)
+                    #     if mean_gradient is None:
+                    #         mean_gradient = torch.ones_like(gradient_of_target_layer, device=device)
+                    #         mean_gradient = mean_gradient / (mean_gradient.norm() + 1e-6)
+                    #     scalar_product = ((gradient_of_target_layer*mean_gradient).sum())/((gradient_of_target_layer.norm()+1e-6)*mean_gradient.norm())
+                    #     alpha = torch.acos(scalar_product) / (2*3.141)*360
+                    #     mean_gradient = exp_moving_average(mean_gradient, gradient_of_target_layer/(gradient_of_target_layer_magnitude+1e-6))
+                    #     loss_outputs['grad_target_layer_alpha'] = alpha * batch_size
 
                     loss_outputs['lr'] = torch.tensor([optimizer.param_groups[0]['lr']], device=device) * batch_size
 

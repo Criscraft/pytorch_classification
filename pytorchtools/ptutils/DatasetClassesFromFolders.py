@@ -10,7 +10,7 @@ from sklearn.model_selection import (StratifiedKFold,
                                     StratifiedShuffleSplit)
 
 
-EXTENSIONS = set(['jpg', 'png', 'JPEG'])
+EXTENSIONS = set(['jpg', 'png', 'JPEG', 'JPG'])
 
 
 class DatasetClassesFromFolders(object):

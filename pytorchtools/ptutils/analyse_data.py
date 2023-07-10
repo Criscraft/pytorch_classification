@@ -4,62 +4,72 @@ from scipy.stats import kde
 from torchvision import transforms
 import ptutils.PytorchHelpers as ph
 
+def get_dataset_mean_std(dataset):
+    means = []
+    stds = []
+    for item in dataset:
+        image = item['data']
+        means.append(image.mean((1,2)).cpu().numpy())
+        stds.append(image.std((1,2)).cpu().numpy())
+    mean = np.mean(means, 0)
+    std = np.mean(stds, 0)
+    return mean, std
 
-def check_data_mean_std(dataset):
-    """
-    Dataset has to output RGB images.
-    """
+# def check_data_mean_std(dataset):
+#     """
+#     Dataset has to output RGB images.
+#     """
 
-    aggregate = (0., 0., 0.)
+#     aggregate = (0., 0., 0.)
 
-    for i in range(len(dataset)):
-        image = dataset[i]['data'].numpy().mean(axis=(1,2))
-        aggregate = update_mean_std(aggregate, image)
+#     for i in range(len(dataset)):
+#         image = dataset[i]['data'].numpy().mean(axis=(1,2))
+#         aggregate = update_mean_std(aggregate, image)
 
-    image_means, image_stds, _ = finalize_mean_std(aggregate)
+#     image_means, image_stds, _ = finalize_mean_std(aggregate)
 
-    return image_means, image_stds
+#     return image_means, image_stds
 
 
-def update_mean_std(existingAggregate, newValue):
-    """Welford's Online algorithm for computing mean and std of a distribution online.
-    mean accumulates the mean of the entire dataset.
-    m2 aggregates the squared distance from the mean.
-    count aggregates the number of samples seen so far.
+# def update_mean_std(existingAggregate, newValue):
+#     """Welford's Online algorithm for computing mean and std of a distribution online.
+#     mean accumulates the mean of the entire dataset.
+#     m2 aggregates the squared distance from the mean.
+#     count aggregates the number of samples seen so far.
 
-    Arguments:
-        existingAggregate {tuple} -- Intermediate results (count, mean, m2)
-        newValue {float} -- A new value drawn from the distribution
+#     Arguments:
+#         existingAggregate {tuple} -- Intermediate results (count, mean, m2)
+#         newValue {float} -- A new value drawn from the distribution
 
-    Returns:
-        tuple -- updated aggregate (count, mean, m2)
-    """
+#     Returns:
+#         tuple -- updated aggregate (count, mean, m2)
+#     """
 
-    (count, mean, m2) = existingAggregate
-    count += 1
-    delta = newValue - mean
-    mean += delta / count
-    delta2 = newValue - mean
-    m2 += delta * delta2
+#     (count, mean, m2) = existingAggregate
+#     count += 1
+#     delta = newValue - mean
+#     mean += delta / count
+#     delta2 = newValue - mean
+#     m2 += delta * delta2
 
-    return (count, mean, m2)
+#     return (count, mean, m2)
 
-def finalize_mean_std(existingAggregate):
-    """Retrieve the mean, variance and sample variance from an aggregate
+# def finalize_mean_std(existingAggregate):
+#     """Retrieve the mean, variance and sample variance from an aggregate
 
-    Arguments:
-        existingAggregate {tuple} -- Intermediate results (count, mean, m2)
+#     Arguments:
+#         existingAggregate {tuple} -- Intermediate results (count, mean, m2)
         
-    Returns:
-        tuple -- distribution statistics: (mean, standard deviation, standard deviation with sample normalization
-    """
+#     Returns:
+#         tuple -- distribution statistics: (mean, standard deviation, standard deviation with sample normalization
+#     """
 
-    (count, mean, m2) = existingAggregate
-    (mean, variance, sample_variance) = (mean, m2/count, m2/(count - 1)) 
-    if count < 2:
-        return float('nan')
-    else:
-        return (mean, np.sqrt(variance), np.sqrt(sample_variance))
+#     (count, mean, m2) = existingAggregate
+#     (mean, variance, sample_variance) = (mean, m2/count, m2/(count - 1)) 
+#     if count < 2:
+#         return float('nan')
+#     else:
+#         return (mean, np.sqrt(variance), np.sqrt(sample_variance))
 
 def plot_img_sizes(dataset, filename=''):
 
@@ -111,18 +121,28 @@ def plot_img_sizes(dataset, filename=''):
     print(np.mean(shapes[0]/shapes[1]))
 
 
-def plot_class_distributions(dataloader, filename=''):
-    labels = []
-    for batch in dataloader:
-        labels.extend(batch['label'])
-    labels = np.array(labels)
+def plot_class_distributions(dataloader=None, dataset=None, filename=''):
+    if (dataloader is None and dataset is None) or (dataloader is not None and dataset is not None):
+        raise ValueError("Specify either dataloader or dataset.")
 
-    print('number of samples: {}'.format(len(labels)))
-    unique = np.unique(labels)
-    n_classes = len(unique)
-    print('n_classes: ' + str(n_classes))
+    if dataloader is not None:
+        labels = []
+        for batch in dataloader:
+            labels.extend(batch['label'])
+        labels = np.array(labels)
 
-    hist, bins = np.histogram(labels, n_classes)
+        print('number of samples: {}'.format(len(labels)))
+        unique = np.unique(labels)
+        n_classes = len(unique)
+        print('n_classes: ' + str(n_classes))
+
+        hist, bins = np.histogram(labels, n_classes)
+    elif dataset is not None:
+        hist = dataset.class_counts
+        n_classes = len(hist)
+        print(f"number of samples: {np.sum(hist)}")
+        print(f"n_classes: {n_classes}")
+
     print('mean class count')
     print(np.mean(hist))
     print('min_class_count')
@@ -191,8 +211,8 @@ def tensor_to_pil(image, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]):
     target_std = np.array(std).reshape((3,1,1))
     image = image.numpy().squeeze()
     if image.ndim == 3:
-        image = image / image.std((1,2), keepdims=True) * target_std
-        image = image - image.mean((1,2), keepdims=True) + target_mean
+        image = image * target_std
+        image = image + target_mean
         image = image.transpose((1,2,0))
     image[image < 0.] = 0.
     image[image > 1.] = 1.
@@ -207,19 +227,18 @@ def plot_image_batch(dataloader, batch_index=0, filename='', norm_mean=[], norm_
     for i, batch in enumerate(dataloader):
         if i == batch_index:
             break
-    
-    ncol = 4
-    nrow = np.ceil(batch['data'].shape[0] / float(ncol)).astype(int)
+    fig = plot_grid(batch["data"], norm_mean, norm_std, filename, [dataloader.dataset.class_names[ind] for ind in batch["label"]])
+    return fig
+
+def plot_grid(data, norm_mean, norm_std, filename='', labels=[], ncol=3):
+    nrow = np.ceil(data.shape[0] / float(ncol)).astype(int)
     fig, _ = plt.subplots(nrow, ncol, figsize=(ncol*2.5,nrow*2.5))
-    try:
-        class_names = dataloader.dataset.class_names
-    except: 
-        class_names = None
-    for i, (image_tensor, label) in enumerate(zip(batch['data'], batch['label'])):
+    if not labels:
+        labels = ["" for _ in range(len(data))]
+    for i, (image_tensor, label) in enumerate(zip(data, labels)):
         ax = plt.subplot(nrow, ncol, i+1)
         ax.imshow(tensor_to_pil(image_tensor, norm_mean, norm_std))
-        labelstring = class_names[label] if class_names else str(label)
-        ax.set_title(labelstring)
+        ax.set_title(label)
         plt.axis('off')
     fig.tight_layout()
     

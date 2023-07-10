@@ -317,10 +317,10 @@ class ResNet_(nn.Module):
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.classifier = nn.Linear(512 * block.expansion, num_classes)
 
-        self.reinitialize(init_mode, activation, zero_init_residual)
+        self._initialize_weights(init_mode, activation, zero_init_residual)
 
 
-    def reinitialize(self, init_mode, activation, zero_init_residual):
+    def _initialize_weights(self, init_mode='kaiming_normal', activation='relu', zero_init_residual=False):
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 if init_mode == 'kaiming_normal':

@@ -1,14 +1,26 @@
-import matplotlib.pyplot as plt
+import os
+import torch
+import pandas as pd
 from ptutils.PytorchLoop import PytorchLoop
-import ptutils.analyse_network as an
+from torchinfo import summary
 
-SAVE_EXTENSION = "pdf"
 
-# Use LaTeX text interpretation in figures
-plt.rcParams.update({
-    "text.usetex": True})
+def summarize_network(network, input_size):
+    device = torch.device("cpu")
+    network = network.to(device)
+    pd.set_option("max_colwidth", 150)
+    return summary(network, input_size, col_names=["kernel_size", "output_size", "num_params", "mult_adds"])
+
+
+def print_modules(network):
+    for name, item in network.named_modules():
+        print(str(name) + '     ' + str(item))
+        print('-----')
 
 def get_config():
+
+    pytorchtools_path = os.path.expanduser('~/Documents/development/pytorch_classification/pytorchtools')
+    script_dir_path = os.path.dirname(os.path.realpath(__file__))
 
     config = {
         'seed' : 42,
@@ -24,7 +36,7 @@ def get_config():
     config['networks'] = {}
 
     item = {}; config['networks']['network_main'] = item
-    item['source'] = '/nfshome/linse/Documents/development/pytorch_classification/pytorchtools/ptnetworks/ResNetCIFAR.py'
+    item['source'] = os.path.join(pytorchtools_path, 'ptnetworks/ResNetCIFAR.py')
     item['params'] = {
         'variant' : 'resnet018',
         'n_classes' : 10, 
@@ -33,10 +45,10 @@ def get_config():
 
     return config
 
+
 config = get_config()
 pytorch_loop = PytorchLoop(config)
 shared_modules = pytorch_loop.shared_modules
 
-
-result = an.summarize_network(shared_modules['network_main'], (3, 32, 32))
+result = summarize_network(shared_modules['network_main'], (1, 3, 224, 224))
 print(result)

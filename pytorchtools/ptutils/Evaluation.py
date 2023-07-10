@@ -29,7 +29,7 @@ def load_log_data(filename):
 
 def plot_training_history(filenames_train=[""], filenames_val=[""], list_to_plot=['loss'], exp_names=[], y_labels=[], y_lim=1e6, ncol=2, max_legend_size=5, log_scale=[], display_train_legend=False ,display_val_legend=True):
     nrow = np.ceil(len(list_to_plot) / float(ncol)).astype(int)
-    fig, axes = plt.subplots(nrow, ncol, figsize=(ncol*4,nrow*4))
+    fig, axes = plt.subplots(nrow, ncol, figsize=(ncol*6,nrow*6))
     if nrow > 1:
         axes = [a for sub_list in axes for a in sub_list]
     

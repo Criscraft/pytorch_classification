@@ -1,35 +1,43 @@
-import os
-import torch
+import enum
 import torch.nn as nn
 import ptutils.PytorchHelpers as ph
 from ptschedulers.SchedulerBaseModule import SchedulerBaseModule
 
+class Mode(enum.Enum):
+        CONV = "CONV"
+        LINEAR = "LINEAR"
+        BN = "BN"
+
+def mode_to_module(mode):
+    if mode == Mode.CONV:
+        return nn.Conv2d
+    elif mode == Mode.LINEAR:
+        return nn.Linear
+    elif mode == Mode.BN:
+        return nn.BatchNorm2d
+
 class SchedulerTrainingInitializationModule(SchedulerBaseModule):
     """
-    Create optimizer and store it in shared_modules under the fixed name 'optimizer_default', no matter the actual name of the optimizer in config.
+    Create optimizer and store it in shared_modules.
     """
     def __init__(self,
         active_epochs=set([1]),
-        network='network_main', 
-        loss_fn='loss_fn_main', 
-        loader='loader_train', 
-        use_weights=False,
+        network='network_main',
         optimizer='optimizer_main',
-        param_groups_ids=[],
-        set_all_weights_require_grad=False,
-        set_bnorms_require_grad=False):
+        weight_decay=0.,
+        modules_for_weight_decay=["CONV", "LINEAR", "BN"],
+        weight_decay_applies_to_bias=True):
         super().__init__()
 
         self.active_epochs = active_epochs
         self.network = network
-        self.loss_fn = loss_fn
-        self.loader = loader
-        self.use_weights = use_weights
         self.optimizer = optimizer
-        self.param_groups_ids = param_groups_ids
-        self.set_all_weights_require_grad = set_all_weights_require_grad
-        self.set_bnorms_require_grad = set_bnorms_require_grad
-
+        self.weight_decay = weight_decay
+        modules_for_weight_decay = [Mode(item) for item in modules_for_weight_decay]
+        self.modules_for_weight_decay = tuple(mode_to_module(mode) for mode in modules_for_weight_decay)
+        print(modules_for_weight_decay)
+        print(self.modules_for_weight_decay)
+        self.weight_decay_applies_to_bias = weight_decay_applies_to_bias
 
         if not isinstance(self.active_epochs, set):
             self.active_epochs = set(self.active_epochs)
@@ -40,42 +48,47 @@ class SchedulerTrainingInitializationModule(SchedulerBaseModule):
             return None
 
         network = shared_modules[self.network]
-        device = shared_modules['device']
 
-        if self.set_bnorms_require_grad:
-            for m in network.modules():
-                if isinstance(m, nn.BatchNorm2d) or isinstance(m, nn.BatchNorm1d):
-                    for param in m.parameters():
-                        param.requires_grad = True
+        optimizer_config = config['optimizers'][self.optimizer]
+        if self.weight_decay > 0.:
+            assert not hasattr(optimizer_config["params"], "weight_decay")
+            # separate out all parameters to those that will and won't experience regularizing weight decay
+            decay = set()
+            all_p = set()
+            no_decay = set()
 
-        if self.set_all_weights_require_grad:
-            for param in network.parameters():
-                param.requires_grad = True
+            for mn, m in network.named_modules():
+                for pn, p in m.named_parameters():
+                    fpn = '%s.%s' % (mn, pn) if mn else pn # full param name
+                    all_p.add(fpn)
+                     
+                    if isinstance(m, self.modules_for_weight_decay):
+                        if pn.endswith('bias') and not self.weight_decay_applies_to_bias:
+                            continue
+                        print("Add module: ")
+                        print(fpn)
+                        # weights of whitelist modules will be weight decayed
+                        decay.add(fpn)
+            
+            no_decay = all_p - decay
 
-        self.param_groups_ids.append('') #this is to include all parameters that are left into the last parameter group
-        param_groups = []
-        param_names_left = set([name for name, _ in network.named_parameters()])
-        for identifier in self.param_groups_ids:
-            params = []
-            #in the case of multiple networks, we have to add the parameters of every network. 
-            if isinstance(network, (list, tuple)):
-                parameters_orig = [net.named_parameters() for net in network]
-            else:
-                parameters_orig = [network.named_parameters()]
-            for item in parameters_orig:
-                for name, param in item:
-                    if param.requires_grad and name in param_names_left and identifier in name:
-                        params.append(param)
-                        param_names_left.remove(name)
-            param_groups.append({'params' : params})
+            # validate that we considered every parameter
+            param_dict = {pn: p for pn, p in network.named_parameters()}
+            inter_params = decay & no_decay
+            union_params = decay | no_decay
+            assert len(inter_params) == 0, "parameters %s made it into both decay/no_decay sets!" % (str(inter_params), )
+            assert len(param_dict.keys() - union_params) == 0, "parameters %s were not separated into either decay/no_decay set!" \
+                                                        % (str(param_dict.keys() - union_params), )
 
-        shared_modules[self.optimizer] = ph.get_optimizer_for_network(config['optimizers'][self.optimizer], param_groups)
-        
-        if self.use_weights:
-            weights = shared_modules[self.get_param('loader')].dataset.get_class_weights()
-            weights = torch.from_numpy(weights).float()
-            weights = weights.to(device)
-            shared_modules[self.loss_fn].set_weights(weights)
+            # create the pytorch optimizer object
+            param_groups = [
+                {"params": [param_dict[pn] for pn in sorted(list(decay))], "weight_decay": self.weight_decay},
+                {"params": [param_dict[pn] for pn in sorted(list(no_decay))], "weight_decay": 0.0},
+            ]
+        else:
+            param_groups = [{"params": network.parameters()}]
+            
+        shared_modules[self.optimizer] = ph.get_optimizer_for_network(optimizer_config, param_groups)
 
         print('initialized training with optimizer:')
         print(shared_modules[self.optimizer])

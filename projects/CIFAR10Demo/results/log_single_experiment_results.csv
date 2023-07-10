@@ -1,6 +1,6 @@
 ,id,acc,label_of_positive
-../log/cifar10/seed_2,../log/cifar10/seed_2,0.9245,
 ../log/cifar10/seed_0,../log/cifar10/seed_0,0.9233,
 ../log/cifar10/seed_1,../log/cifar10/seed_1,0.9225,
-../log/cifar10/seed_4,../log/cifar10/seed_4,0.9229,
+../log/cifar10/seed_2,../log/cifar10/seed_2,0.9245,
 ../log/cifar10/seed_3,../log/cifar10/seed_3,0.9205,
+../log/cifar10/seed_4,../log/cifar10/seed_4,0.9229,
